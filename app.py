@@ -4,6 +4,18 @@ import gspread
 from google.oauth2.service_account import Credentials
 import datetime
 
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+        background-attachment: fixed;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # === CONFIGURATION ===
 SPREADSHEET_NAME = "DashboardData"
 
