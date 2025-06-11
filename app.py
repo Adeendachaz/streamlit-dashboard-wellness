@@ -10,9 +10,9 @@ SPREADSHEET_NAME = "DashboardData"
 
 # === AUTH GOOGLE SHEET ===
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-credentials = ServiceAccountCredentials.from_json_keyfile_name("service_account.json", scope)
+credentials_dict = json.loads(st.secrets["service_account"])
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, scope)
 gc = gspread.authorize(credentials)
-credentials = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["service_account"], scope)
 # === LOAD DATA ===
 worksheet = gc.open(SPREADSHEET_NAME).sheet1
 data = worksheet.get_all_records()
