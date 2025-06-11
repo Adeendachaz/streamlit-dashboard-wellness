@@ -6,7 +6,6 @@ from google.auth.transport.requests import Request
 import datetime
 
 # === CONFIGURATION ===
-SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/15U5lAAHwX26iI9OqAaQBqw4mqvOS3r-8vjcaJ_FA-Zo/edit?hl=id&gid=0#gid=0"
 SPREADSHEET_NAME = "DashboardData"
 
 # === AUTH GOOGLE SHEET ===
