@@ -6,13 +6,12 @@ from google.auth.transport.requests import Request
 import datetime
 
 # === CONFIGURATION ===
-# Ganti dengan link Google Spreadsheet Anda
-SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID"
+SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/15U5lAAHwX26iI9OqAaQBqw4mqvOS3r-8vjcaJ_FA-Zo/edit?hl=id&gid=0#gid=0"
 SPREADSHEET_NAME = "DashboardData"
 
 # === AUTH GOOGLE SHEET ===
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-credentials = ServiceAccountCredentials.from_json_keyfile_name("service_account.json", scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["service_account"], scope)
 gc = gspread.authorize(credentials)
 
 # === LOAD DATA ===
