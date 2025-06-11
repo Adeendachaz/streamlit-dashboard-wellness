@@ -4,22 +4,17 @@ import gspread
 from google.oauth2.service_account import Credentials
 import datetime
 
-st.markdown("""
+st.markdown(
+    """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
-
     .stApp {
-        background: linear-gradient(135deg, #f8bbd0 100%);
+        background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
         background-attachment: fixed;
-        font-family: 'Baloo 2', cursive;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Baloo 2', cursive;
-        color: #880e4f;
     }
     </style>
-""", unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True
+)
 
 # === CONFIGURATION ===
 SPREADSHEET_NAME = "DashboardData"
