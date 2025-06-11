@@ -1,15 +1,17 @@
 import streamlit as st
 import pandas as pd
 import gspread
-import json
-from google.auth.transport.requests import Request
+from google.oauth2.service_account import Credentials
 import datetime
 
 # === CONFIGURATION ===
 SPREADSHEET_NAME = "DashboardData"
 
 # === AUTH GOOGLE SHEET ===
-scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+scope = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive"
+]
 service_account_info = dict(st.secrets["service_account"])
 credentials = Credentials.from_service_account_info(service_account_info, scopes=scope)
 gc = gspread.authorize(credentials)
