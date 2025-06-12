@@ -86,4 +86,4 @@ elif chart_option == "Calories Over Time":
 else:
     st.line_chart(df_sorted.set_index("Date")["Water Intake"])
 
-st.write("\n---\nBuilt with ❤️ using Streamlit + Google Spreadsheet")
+st.write("\n---\nWellness isn't a trend, it's a way to living. Prioritize rest, hydration, and peace. ❤️ ")
